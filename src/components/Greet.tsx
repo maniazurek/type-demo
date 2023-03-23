@@ -1,10 +1,11 @@
 type GreetProps = {
   name: string;
-  messageCount: number;
+  messageCount?: number;
   isLoggedIn: boolean;
 };
 
 const Greet = (props: GreetProps) => {
+  const { messageCount = 0 } = props; // if message is passed use its value if not use 0 as a value
   return (
     <>
       {props.isLoggedIn ? (
